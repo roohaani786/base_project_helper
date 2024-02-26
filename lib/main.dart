@@ -5,7 +5,7 @@ import 'package:logger/logger.dart';
 import 'core/network/network_manager.dart';
 import 'presentation/ui/home_page.dart';
 
-
+//
 final GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey =
 GlobalKey<ScaffoldMessengerState>();
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
