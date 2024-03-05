@@ -1,3 +1,7 @@
 {
-  "hello": "Hello"
+  "hello": "Hello",
+  "User ID": "User ID",
+  "ID": "ID",
+  "Title": "Title",
+  "Completed": "Completed"
 }

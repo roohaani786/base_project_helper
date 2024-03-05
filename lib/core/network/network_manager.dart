@@ -37,6 +37,7 @@ class NetworkManager {
         try {
           final downloadTime = HttpDate.parse(downloadTimeString);
 
+          // ignore: unnecessary_null_comparison
           if (downloadTime != null) {
             final duration =
                 DateTime.now().difference(downloadTime).inMilliseconds;
@@ -50,9 +51,12 @@ class NetworkManager {
 
             logger.i('Internet speed: $_currentInternetSpeed MB/s');
 
-            if (isInternetSlow(_currentInternetSpeed)) {
+            if (isInternetSlow(_currentInternetSpeed) && _currentInternetSpeed != 0.0) {
               logger.i('Your Internet looks Slow');
               // You can show a snackbar here if needed
+            }
+            else if (_currentInternetSpeed == 0.0){
+              logger.i('No Internet');
             }
           } else {
             logger.e('Error parsing download time: Invalid date format');

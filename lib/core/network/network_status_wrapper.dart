@@ -34,13 +34,18 @@ class NetworkStatusWrapper extends StatelessWidget {
           if (networkManager.internetSpeedTested) {
             // Speed test already performed
           } else {
-            Future.delayed(const Duration(seconds: 2), () {
+            Future.delayed(const Duration(seconds: 3), () {
               bool isSlow = networkManager.isInternetSlow(0.1);
               if (isSlow) {
                 // Internet speed is slow, show toast
                 logger.i("Internet Slow");
                 networkManager.internetSpeedTested = true;
-                showToast('Your Internet looks Slow');
+                // if(networkManager.getCurrentInternetSpeed() != 0.0){
+                //   showToast('Your Internet looks Slow');
+                // }
+                // else{
+                //   showToast('No Internet');
+                // }
               }
             });
           }
